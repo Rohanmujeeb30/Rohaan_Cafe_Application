@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "471318382514",
+    "project_id": "rohaan-s-cafe-application",
+    "storage_bucket": "rohaan-s-cafe-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:471318382514:android:1696a1bd224e0d870686ab",
+        "android_client_info": {
+          "package_name": "com.example.rohaanscafeapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "471318382514-9lb91hqbihgenjuqsu8cdm1g2uugg52q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6rvTGdV6ctX-b9jiv37f8ufjxLtxGX2c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "471318382514-9lb91hqbihgenjuqsu8cdm1g2uugg52q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
