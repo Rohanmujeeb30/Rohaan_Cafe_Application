@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.ContactsContract;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -26,6 +29,7 @@ TextView txt,updatetxt, deleteacc;
 ImageView image;
 Button btn, logoutoutbutton;
 int pic;
+FirebaseAuth auth;
 
 
 
@@ -38,10 +42,11 @@ int pic;
         btn = findViewById(R.id.orderbutton);
         updatetxt = findViewById(R.id.updateText);
         ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Log Out");
+        progressDialog.setTitle("Processing");
         progressDialog.setMessage("Please wait");
         logoutoutbutton= findViewById(R.id.logout);
         deleteacc = findViewById(R.id.deleteaccount);
+        auth = FirebaseAuth.getInstance();
 
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -120,5 +125,40 @@ int pic;
 
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.SETTINGS:
+                Toast.makeText(this, "Settings closed", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.LOGOUT:
+                auth.signOut();
+                Intent intent = new Intent(orderactivity.this, MainActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.DELETEACCOUNT:
+                startActivity(new Intent(orderactivity.this,DeleteUser.class));
+                break;
+
+            case R.id.UPDATEEMAIL:
+                startActivity(new Intent(orderactivity.this,UpdateEmail.class));
+                break;
+        }
+
+
+
+        return true;
     }
 }

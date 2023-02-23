@@ -1,6 +1,8 @@
 package com.example.rohaanscafeapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -8,8 +10,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.rohaanscafeapplication.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,7 +28,10 @@ FirebaseAuth auth;
         super.onCreate(savedInstanceState);
         binding= ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        auth = FirebaseAuth.getInstance();
         getSupportActionBar().hide();
+
+
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Processing");
@@ -98,4 +106,5 @@ FirebaseAuth auth;
 
 
     }
+
 }

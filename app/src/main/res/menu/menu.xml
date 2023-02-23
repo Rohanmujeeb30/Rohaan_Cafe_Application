@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Settings"
+        android:id="@+id/SETTINGS"/>
+
+    <item android:title="Update email"
+        android:id="@+id/UPDATEEMAIL"/>
+
+
+    <item android:title="Delete your account"
+        android:id="@+id/DELETEACCOUNT"/>
+
+    <item android:title="Log out"
+        android:id="@+id/LOGOUT"/>
+</menu>
